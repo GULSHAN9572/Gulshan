@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 8px;
+            margin: 10px;
+        }
+
+        iframe {
+            width: 80%;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="urlInput" placeholder="Enter URL">
+    <button onclick="loadPage()">Go</button>
+    <iframe id="browserFrame" src="" frameborder="0"></iframe>
+
+    <script>
+        function loadPage() {
+            var url = document.getElementById("urlInput").value;
+            document.getElementById("browserFrame").src = url;
+        }
+    </script>
+</body>
+</html>

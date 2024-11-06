@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            /* grid-template-columns: auto auto auto; */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 100% 100%;
+            background-color: rgb(14, 221, 76);
+            
+        }
+        div.item {
+            border: 1px solid #dd0b0b;
+            background-color: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem ipsues quam .m in qui amet enim obcaecati!</div>
+        <div class="item">2 dfghfg try rty rty eryte </div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            /* grid-template-columns: auto auto auto; */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 1 / span 2;
+            background-color: rgb(14, 221, 76);
+            
+        }
+       
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="item1"><img width="24%" src="./java.png" alt=""></div>
+        <div class="item2"><img width="24%" src="./10393.jpg" alt=""></div>
+        <div class="item3"><img width="24%" src="./1677978512768.jpg" alt=""></div>
+        <div class="item4"><img width="24%" src="./download.jpg" alt=""></div>
+        <div class="item5"><img width="24%" src="./logo.jpg" alt=""></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+.p{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(98, 0, 255);
+    border-radius: 50%;
+    animation: move 2s ease-in-out 100;
+
+}
+@keyframes move{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 100%;
+    }
+}

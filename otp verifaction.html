@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+</head>
+<body>
+  <h2>OTP Verification</h2>
+  <form id="otpForm" action="#" method="post">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <button type="button" onclick="sendOTP()">Send OTP</button>
+    <br>
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="button" onclick="verifyOTP()">Verify OTP</button>
+  </form>
+
+  <script>
+    function sendOTP() {
+      // Implement OTP sending logic here
+      // You need server-side scripting for this
+      alert("OTP sent to your phone number.");
+    }
+
+    function verifyOTP() {
+      // Implement OTP verification logic here
+      // You need server-side scripting for this
+      var enteredOTP = document.getElementById("otp").value;
+      // Dummy OTP for demonstration, replace this with actual verification logic
+      var correctOTP = " ";
+      if (enteredOTP === correctOTP) {
+        alert("OTP Verified successfully!");
+        // You can redirect to another page or perform further actions here
+      } else {
+        alert("Invalid OTP! Please try again.");
+      }
+    }
+    
+  </script>
+  
+</body>
+</html>

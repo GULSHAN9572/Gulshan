@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+</head>
+<body>
+  <h2>OTP Verification</h2>
+  <form id="otpForm" action="#" method="post">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <button type="button" onclick="sendOTP()">Send OTP</button>
+    <br>
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <button type="button" onclick="verifyOTP()">Verify OTP</button>
+    <p id="verificationResult"></p>
+  </form>
+
+  <script>
+    function sendOTP() {
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      // Make a request to your server to send OTP to the provided phone number
+      // This is a hypothetical API call
+      // Replace 'your-api-endpoint' with your actual API endpoint
+      fetch('your-api-endpoint/send-otp?phone=' + phoneNumber)
+        .then(response => {
+          if (response.ok) {
+            alert("OTP sent to your phone number.");
+          } else {
+            alert("Failed to send OTP. Please try again later.");
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+    function verifyOTP() {
+      var enteredOTP = document.getElementById("otp").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      // Make a request to your server to verify the entered OTP
+      // This is a hypothetical API call
+      // Replace 'your-api-endpoint' with your actual API endpoint
+      fetch('your-api-endpoint/verify-otp?phone=' + phoneNumber + '&otp=' + enteredOTP)
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            document.getElementById("verificationResult").textContent = "OTP Verified successfully!";
+          } else {
+            document.getElementById("verificationResult").textContent = "Invalid OTP! Please try again.";
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bole</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="./Bole logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./share.css">
+    <style>
+        /* Add some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .container{
+            display: flex;
+            color: rgb(7, 52, 255);
+            background-color: rgb(0, 0, 0);
+
+            flex-wrap: wrap;
+            /* border: 1px solid black; */
+            text-align: center;
+            height: 100%;
+        
+        }
+        .item{
+            
+            /* width: 50px;
+            height: 50px;
+            background-color: blue;
+            border: 2px solid yellowgreen; */
+            font-size: 50px;
+        }
+        .around{
+            justify-content: space-around;
+        }
+        
+    </style>
+</head>
+<body >
+    <div class="container around">
+        <div class="item"><i class="fa-solid fa-house"></i></div>
+        <div class="item"><i class="fa-solid fa-heart"></i> </div>
+        <div class="item"><i class="fa-solid fa-envelope"></i></div>
+        <div class="item"><a style="background-color: rgb(30, 255, 0)" href="tel:+6299050695"><i class="fa-solid fa-phone"></i></a></div>
+    </div>
+
+    <b><h1 style="text-align: center; font-size: 60px; "><img width="100px" height="100px" src="./Bole logo.png" alt=""> Bole</h1></b>
+    <marquee behavior="" direction=""><h1> 🙏❤️Welcome to Bole❤️🙏</h1></marquee>
+
+    <img height="200px" width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0veK_HGaUyi0QffFjJHs_nZZS84bEloCt0g&usqp=CAU" alt="">
+
+    
+    <h2 style="text-align: left; color: blue; ">Create Your Personal UserID and Password:</h2>
+    <h4 style="text-align: center; background-color: rgb(51, 107, 192);">Enter UserID <input type="text" name="UserID" placeholder="UserID" id="UserID">
+    Enter password<input type="password" name="password" placeholder="enter password" id="password">
+    </h4>
+    <h2 style="text-align: left; color: blue;">Please fill the details carefully:</h2>
+    <h4 style="text-align: center;  background-color: rgb(51, 107, 192);">
+    <label for="name">Enter your name</label>
+    <input  type="text" placeholder="Enter your name" >
+    <label for="Number">Enter your phone Number</label>
+    
+    <input  type="tel" placeholder="Enter your phone Number" >
+    </h4>
+    <h4 style="text-align: center;  background-color: rgb(51, 107, 192);">
+    <label for="Email">Enter your Email</label>
+    <input  type="email" placeholder="Enter your Email" ></h4>
+    <h2 style="text-align: left; color: blue;">Enter Account details:</h2>
+
+    <h4 style="text-align: center;  background-color: rgb(51, 107, 192);"><label for="IFSC">IFSC BANK CODE</label>
+    <input  type="text" placeholder="IFSC BANK CODE" >
+    </h4>
+    
+    
+    <h4 style="text-align: center; background-color: rgb(51, 107, 192);">
+    <label for="Account">Enter Account:</label>
+    <input type="password" id="Account" maxlength="30" placeholder="Enter Account">
+
+    <label for="secondCharacter">ReEnter Account:</label>
+    <input type="text" id="secondCharacter" maxlength="30" placeholder="ReEnter Account">
+
+    <button id="verificationResult" onclick="verifyAccount()">click here to Verify Account</button>
+
+
+    <!-- <p id="verificationResult">कृपया खाता संख्‍या सही से दर्ज करे</p> -->
+    </h4>
+
+    <script>
+        function verifyAccount() {
+            // Get the entered Account
+            var firstChar = document.getElementById('Account').value;
+            var secondChar = document.getElementById('secondCharacter').value;
+
+            // Predefined combination for verification
+            // var correctCombination = '22';
+
+            // Check if the entered Account match the predefined combination
+            if (firstChar === secondChar) {
+                document.getElementById('verificationResult').innerHTML = 'Account Verified!';
+            } else {
+                document.getElementById('verificationResult').innerHTML = 'Account Not Verified. Please try again.';
+            }
+        }
+
+    </script>
+    <h5 style="text-align: center;"><button onclick="submit()">submit</button></h5>
+    <p style="text-align: center; color: green; " id="submit"></p>
+    <script>
+        function submit(){
+        document.getElementById('submit').innerHTML = 'submited'; }
+    </script>
+
+
+    <h4>Apply Referral Code:</h4>
+    <label style="color: rgb(255, 0, 0);" for="promoCode">Enter Referral Code:</label>
+    <input type="text" id="promoCode" placeholder="Enter your Referral code">
+
+    <button style="background-color: rgb(51, 107, 192);" onclick="applyPromoCode()">Apply Referral Code</button>
+    <h4 style="text-align: center; color: green;">Ask Referral code  <a href="tel:+6299050695">Call</a>
+    <a href="mailto:agbp95@gmail.com">Email</a></h4>
+
+    <div style="color: rgb(42, 165, 48);" id="result"></div>
+
+    <script>
+        function applyPromoCode() {
+            // Get the entered promo code
+            var promoCode = document.getElementById('promoCode').value;
+
+            // Here you can implement your logic to check the validity of the promo code
+            // For simplicity, let's assume a hardcoded valid promo code
+            var validPromoCode = '6299050695';
+
+            // Check if the entered promo code is valid
+            if (promoCode === validPromoCode) {
+                document.getElementById('result').innerHTML = 'Referral Code Applied Successfully!';
+            } else {
+                document.getElementById('result').innerHTML = 'Invalid Referral Code. Please try again.';
+            }
+        }
+    </script>
+    <h1 style="text-align: center; background-color: rgb(37, 216, 37); color: rgb(218, 5, 182);">Buy Now</h1>
+    <table border="5">
+        <tbody >
+            <thead style="text-align: center; color: rgb(255, 10, 214);" >
+                <td >Mouse</td>
+                <td>Keyboard</td>
+                <td>Mouse with Keyboard</td>
+                <td>Laptop</td>
+                <td>Printer</td>
+            </thead>
+            <thead style="height: 200px;">
+                <td><img hight="50px" width="100%" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQMY7U4RmgIII29FYkaQX_q-a_TtTGAB7621GEL-o26H1jaJdLLLKV4BMvArmwd6ORpaX0zrCbua6qq9Q43bj0rQiuCF1Cjv5_NlByHi2IE7R4Z5ybS_qYc3Q&usqp=CAE" alt=""></td>
+                <td><img hight="50px" width="100%" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSi9z4JDUzrF6PIcpKsuIobcoTVCqZx9Hf13ziuNbYehbDXSyOF0-zId7tmJ4j7RMkNT4i9mNSfQsdwBIuwqPoUGx8I4R4jKUQU-NwxOGNTYnhYq404A99UtQ&usqp=CAE" alt=""></td>
+                <td><img hight="50px" width="100%" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQu3XlPQRQrR5Ytwz4irpQwnlwcnTLa-lIxqyfHFjtkjvKtPjQTonOMaALttFR2O_y8dFgzfPrvM0cj5rv6KxrTnkMVSnHT54X6mSrh719AE--QoeFXk_mdNw&usqp=CAE" alt=""></td>
+                <td><img hight="50px" width="100%" src="https://s.yimg.com/ny/api/res/1.2/LS6sAnY7IGeLiGWXLzJkEQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM5Ng--/https://s.yimg.com/os/creatr-uploaded-images/2022-05/83e6ec60-d6b0-11ec-9f17-5b479a460986" alt=""></td>
+                <td><img hight="50px" width="100%" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRkw_6buhIbyvP5vrEEmGy7W317wIhvJTN_HkDBhBHD0YG-vsvo5KuUbewqmRlATlYkq5hgKUOy0PpmzH9LBujUjNITFyYjMjOVWl4pd4oNgnk78dfvRfrCjg&usqp=CAE" alt=""></td>
+            </thead>
+            <thead >
+                <td style="color: blue; text-align: center; "> <img height="150px" width="150px" src="./200.png" alt=""><h5>hkjhgfds lkjhgfdg</h5> </td>
+                <td style="color: blue; text-align: center;"><img height="150px" width="150px" src="./300.png" alt="">300 Buy Now</td>
+                <td style="color: blue; text-align: center;"> <img height="150px" width="150px" src="./500.jpg" alt="">500 Buy Now</td>
+                <td style="color: blue; text-align: center;"> <img height="150px" width="150px" src="./20000.jpg" alt="">20000 Buy Now</td>
+                <td style="color: blue; text-align: center;"> <img height="150px" width="150px" src="./10000.jpg" alt="">10000 Buy Now</td>
+            </thead>
+            
+        </tbody>
+    </table>
+
+    <div class="container around">
+        <div class="item"><img src="./200.png" alt=""></div>
+        <div class="item"><img src="./300.png" alt=""></div>
+        <div class="item"><img src="./500.jpg" alt=""></div>
+        <div class="item"><img src="./20000.jpg" alt=""></div>
+        <div class="item"><img src="./10000.jpg" alt=""></div>
+
+    </div>
+    <div class="container around">
+        <div class="item">Buy now 200$</div>
+        <div class="item">Buy now 300$</div>
+        <div class="item">Buy now 500$</div>
+        <div class="item">Buy now 20000$</div>
+        <div class="item">Buy now 10000$</div>
+
+    </div>
+    <h1 style="background-color: brown; text-align: center;">Any help</h1>
+
+    <nav>
+        <a href="tel:+6299050695">call</a>
+        <a href="mailto:agbp95@gmail.com">Email</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+
+
+
+
+    </nav>
+    
+</body>
+</html>

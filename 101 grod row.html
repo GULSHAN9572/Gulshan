@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <link rel="shortcut icon" href="./1677978512768.jpg" type="image/x-icon">
+    <style>
+        .fruit {
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-columns: repeat(3,1fr);
+            size: 50px;
+            grid grid-gap: 20px;
+
+            /* background-color: aqua; */
+            /* grid-gap: 10px; */
+
+        }
+        .item1 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+
+            /* grid-row-start: 1; 
+            grid-row-end: 3; or */
+            grid-row: 1/2;
+        }
+        .item2 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+        }
+        .item3{
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 3/4;
+            /* order: 5; */
+
+        }
+        .item4 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 1/2;
+
+        }
+        .item5 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 2/3;
+            justify-self: start;
+
+        }
+        .item6 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 3/4;
+            align-self: center;
+
+        }
+        .item7 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 1/2;
+
+        }
+        .item8 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0);
+            grid-row: 2/3; */
+
+        }
+        .item9 {
+            /* border: solid red;
+            background-color: rgb(255, 208, 0); */
+            grid-row: 3/4;
+
+        }
+
+    </style>
+</head>
+<body style="background-color: lawngreen;">
+    <h1 style="text-align: center; color: darkred;">WELCOME TO THIS WEBSITE</h1>
+    <h1 style="background-color: blue; color: aqua; text-align: center;">any enqiry</h1>
+<h1>
+    <div class="fruit" >
+        <div class="item6">apple</div>
+        <div class="item2"><a href="https://youtube.com/">youtube</a></div>
+        <div class="item3">santra</div>
+        <div class="item4"><a href="mailto:gulshankumardariyapur85885@gmail.com"><img width="30px" height="25px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUtMRybkF-jE78B7gEqggVxLKa9b-dr2qtMRFNNY5X&s" alt="">Email</a></div>
+        <div class="item5">pomegranate</div>
+        <div class="item1"><a href="tel:+6299050695"><img width="25px" height="25px" src="https://e7.pngegg.com/pngimages/759/922/png-clipart-telephone-logo-iphone-telephone-call-smartphone-phone-electronics-text-thumbnail.png" alt="call center">call</a>
+        </div>
+
+        <div class="item7"><a href="https://www.google.com/maps/place/RS+Gulshan+Online+center,+Dariyapur+,+sheikhpura+(bihar)/@25.1608443,85.9259819,17z/data=!3m1!4b1!4m6!3m5!1s0x39f2416ed4ce7639:0x4c21461b7fe8f656!8m2!3d25.1608395!4d85.9285568!16s%2Fg%2F11t3v7d2f3?entry=ttu"> <img width="25px" height="25px" src="https://w7.pngwing.com/pngs/8/868/png-transparent-google-maps-hd-logo-thumbnail.png" alt="map">Map</a></div>
+        <div class="item8">lemon</div>
+        <div class="item9">lemon</div>
+        <!-- <div class="item10">lemon</div> -->
+
+
+    </div>
+</h1>
+</body>
+</html>

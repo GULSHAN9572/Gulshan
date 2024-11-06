@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <style>
+        /* CSS styles */
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.aspx">Home</a></li>
+            <li><a href="users.aspx">View Users</a></li>
+            <li><a href="adduser.aspx">Add User</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Add New User</h2>
+        <form runat="server">
+            <label for="name">Name:</label>
+            <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br>
+            <label for="email">Email:</label>
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br>
+            <label for="age">Age:</label>
+            <asp:TextBox ID="txtAge" runat="server"></asp:TextBox><br>
+            <asp:Button ID="btnAddUser" runat="server" Text="Add User" OnClick="btnAddUser_Click" />
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2024 User Management System
+    </footer>
+
+    <!-- Database Connection and Code-Behind -->
+    <script runat="server">
+        protected void btnAddUser_Click(object sender, EventArgs e)
+        {
+            string name = txtName.Text;
+            string email = txtEmail.Text;
+            int age = Convert.ToInt32(txtAge.Text);
+
+            // Establish database connection (example using SQL Server)
+            SqlConnection con = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+            con.Open();
+            
+            // Insert user data into the database
+            SqlCommand cmd = new SqlCommand("INSERT INTO Users (Name, Email, Age) VALUES (@Name, @Email, @Age)", con);
+            cmd.Parameters.AddWithValue("@Name", name);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Age", age);
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            // Redirect to view users page or display success message
+            Response.Redirect("users.aspx");
+        }
+    </script>
+</body>
+</html>

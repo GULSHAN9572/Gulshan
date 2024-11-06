@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(26, 240, 55);
+}
+img{
+    height: 250px;
+    width: 100%;
+}
+h2{
+    text-align: center;
+}
+.item{
+            
+    width: 25%;
+    height: 100px;
+    /* background-color: rgb(255, 0, 212); */
+    border: 2px solid yellowgreen;
+    
+}

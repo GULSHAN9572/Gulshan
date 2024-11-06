@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex direction</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column-reverse;
+            border: 1px solid black;
+            color: rgb(235, 38, 4);
+            text-align: center;
+        }
+        .item{
+            
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border: 2px solid yellowgreen;
+            
+        }
+        .between{
+            align-content: space-between;
+        }
+        .center{
+            align-content: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Flex direction</h1>
+    <div class="container between">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    
+    <h1>Flex direction</h1>
+    <div class="container center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    
+</body>
+</html>
