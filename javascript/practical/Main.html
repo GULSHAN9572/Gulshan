@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reffral CODE GENERATOR</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Enter YOUR MAN PASANDIDA NAME AND number and create referal code</h3>
+        <form id="userForm">
+            <input type="text" id="name" placeholder="ENTER charactor" required>
+            <input type="number" id="age" placeholder="enter number" required>
+            <button type="submit">create</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Form submit hone se roke
+
+            // User ke inputs lein
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+
+            // Result display karein
+            const resultText = `Hello, your Reffral code is ${name}${Math.floor(Math.random() * 9000) + 1000}${age}`;
+            document.getElementById('result').textContent = resultText;
+        });
+    </script>
+</body>
+</html>

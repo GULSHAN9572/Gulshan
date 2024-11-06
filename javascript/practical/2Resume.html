@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .form-section, .resume-section {
+            margin-bottom: 20px;
+        }
+        .form-section input, .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .form-section button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-section button:hover {
+            background-color: #0056b3;
+        }
+        .resume-section {
+            display: none;
+        }
+        .resume-section img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+        }
+        .resume-section h1 {
+            margin: 0;
+        }
+        .resume-section h2 {
+            color: #555;
+        }
+        .resume-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume-section ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h1>Resume Generator</h1>
+            <p>Enter your details to generate your resume.</p>
+            <form id="resumeForm">
+                <label for="photo">Photo URL:</label>
+                <input type="text" id="photo" placeholder="Enter photo URL">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" placeholder="Enter your job title">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" placeholder="Enter your phone number">
+
+                <label for="linkedin">LinkedIn:</label>
+                <input type="text" id="linkedin" placeholder="Enter LinkedIn profile URL">
+
+                <label for="website">Website:</label>
+                <input type="text" id="website" placeholder="Enter your website URL">
+
+                <label for="experience">Experience:</label>
+                <textarea id="experience" rows="5" placeholder="Enter your work experience"></textarea>
+
+                <label for="education">Education:</label>
+                <textarea id="education" rows="3" placeholder="Enter your education details"></textarea>
+
+                <label for="skills">Skills:</label>
+                <textarea id="skills" rows="3" placeholder="Enter your skills, separated by commas"></textarea>
+
+                <label for="projects">Projects:</label>
+                <textarea id="projects" rows="3" placeholder="Enter your projects, separated by commas"></textarea>
+
+                <label for="certifications">Certifications:</label>
+                <textarea id="certifications" rows="3" placeholder="Enter your certifications, separated by commas"></textarea>
+
+                <button type="submit">Generate Resume</button>
+                <button type="button" id="pdfButton" style="display:none;">Download PDF</button>
+            </form>
+        </div>
+
+        <!-- Resume Section -->
+        <div class="resume-section" id="resumeSection">
+            <div>
+                <img id="resumePhoto" src="" alt="Photo">
+                <h1 id="resumeName"></h1>
+                <h2 id="resumeJobTitle"></h2>
+                <p id="resumeContactInfo"></p>
+            </div>
+            <div>
+                <h2>Experience</h2>
+                <p id="resumeExperience"></p>
+            </div>
+            <div>
+                <h2>Education</h2>
+                <p id="resumeEducation"></p>
+            </div>
+            <div>
+                <h2>Skills</h2>
+                <p id="resumeSkills"></p>
+            </div>
+            <div>
+                <h2>Projects</h2>
+                <p id="resumeProjects"></p>
+            </div>
+            <div>
+                <h2>Certifications</h2>
+                <p id="resumeCertifications"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jsPDF and html2pdf.js libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const photoUrl = document.getElementById('photo').value;
+            const name = document.getElementById('name').value;
+            const jobTitle = document.getElementById('jobTitle').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const linkedin = document.getElementById('linkedin').value;
+            const website = document.getElementById('website').value;
+            const experience = document.getElementById('experience').value;
+            const education = document.getElementById('education').value;
+            const skills = document.getElementById('skills').value;
+            const projects = document.getElementById('projects').value;
+            const certifications = document.getElementById('certifications').value;
+
+            // Set the resume data
+            document.getElementById('resumePhoto').src = photoUrl;
+            document.getElementById('resumeName').textContent = name;
+            document.getElementById('resumeJobTitle').textContent = jobTitle;
+            document.getElementById('resumeContactInfo').innerHTML = `
+                Email: <a href="mailto:${email}">${email}</a><br>
+                Phone: ${phone}<br>
+                LinkedIn: <a href="${linkedin}" target="_blank">${linkedin}</a><br>
+                Website: <a href="${website}" target="_blank">${website}</a>
+            `;
+            document.getElementById('resumeExperience').textContent = experience;
+            document.getElementById('resumeEducation').textContent = education;
+            document.getElementById('resumeSkills').textContent = skills;
+            document.getElementById('resumeProjects').textContent = projects;
+            document.getElementById('resumeCertifications').textContent = certifications;
+
+            // Show the resume section
+            document.querySelector('.form-section').style.display = 'none';
+            document.querySelector('.resume-section').style.display = 'block';
+
+            // Show the PDF download button
+            document.getElementById('pdfButton').style.display = 'inline-block';
+        });
+
+        // PDF export function
+        document.getElementById('pdfButton').addEventListener('click', function() {
+            const resumeElement = document.getElementById('resumeSection');
+
+            // Convert HTML to PDF
+            html2pdf().from(resumeElement).save('resume.pdf');
+        });
+    </script>
+  
+
+    <script>
+        document.getElementById('pdfButton').addEventListener('click', function() {
+    const resumeElement = document.getElementById('resumeSection');
+
+    // Convert HTML to PDF with custom options
+    html2pdf().from(resumeElement).set({
+        margin: 10,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { dpi: 192, letterRendering: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    }).save();
+});
+
+    </script>
+</body>
+</html>

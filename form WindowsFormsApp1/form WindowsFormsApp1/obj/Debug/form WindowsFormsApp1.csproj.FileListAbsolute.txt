@@ -1,0 +1,12 @@
+E:\form WindowsFormsApp1\form WindowsFormsApp1\bin\Debug\form WindowsFormsApp1.exe.config
+E:\form WindowsFormsApp1\form WindowsFormsApp1\bin\Debug\form WindowsFormsApp1.exe
+E:\form WindowsFormsApp1\form WindowsFormsApp1\bin\Debug\form WindowsFormsApp1.pdb
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form_WindowsFormsApp1.Form1.resources
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form_WindowsFormsApp1.Properties.Resources.resources
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form WindowsFormsApp1.csproj.GenerateResource.cache
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form WindowsFormsApp1.exe
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\form WindowsFormsApp1.pdb
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\CallLogManagement.Form1.resources
+E:\form WindowsFormsApp1\form WindowsFormsApp1\obj\Debug\CallLogManagement.Program.resources

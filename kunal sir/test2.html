@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <script language="javascript">
+       function check() 
+       {
+           var x;
+           x = document.f1.t1.value;
+           if (x == "" || x == null) 
+           {
+               alert("Name cant be blank");
+           } 
+       }
+   </script>
+</head>
+<body>
+
+<form name="f1">
+      <label>Enter Name</label>
+      <input type="text" id="t1" />
+      <br />
+      <br />
+      <label>Gender</label>
+      <input type="radio" id="r1" name="r1" />Male
+      <input type="radio" id="r1" name="r1"/>Female
+      <input type="radio" id="r1" name="r1"/>Transgender
+      <br />
+      <br />
+      <label>Hobbies</label>
+      <input type="checkbox" id="c1" />Cricket
+      <input type="checkbox" id="Checkbox1" />Chess
+      <input type="checkbox" id="Checkbox2" />Music
+      <input type="checkbox" id="Checkbox3" />Reading
+      <br />
+      <br />
+      <label>State</label>
+      <select id="s1">
+      <option>Select State</option>
+      <option>Bihar</option>
+      <option>UP</option>
+      <option>MP</option>
+      </select>
+      <br />
+      <br />
+      <label>Remarks</label>
+      <textarea rows="4" style="width: 476px"></textarea>
+      <br />
+      <br />
+      <input type="button" value="Validate" onclick="check();" />
+   </form>
+</body>
+</html>

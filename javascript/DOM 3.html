@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part 3</title>
+</head>
+<body>
+    <!--Normal HTML-->
+    <h1>Hello Bacho </h1>
+    <p style="text-align: center; font-size: 50px; color: brown;" id="js"></p>
+    <button onclick="hey()" id="jss"  style="text-align: center;">Submit</button>
+    <!--Javascript-->
+    <script>
+        document.addEventListener("click",hey);
+        // document.addEventListener("mouseenter",hey);
+
+        function hello(){
+            document.getElementById("js").innerText = "Namaste bacho";
+        }
+        function hey(){
+            document.getElementById("jss").innerText = "namaste";
+            document.getElementById("jss").style.color="red";
+            document.getElementById("jss").style.backgroundColor="black";
+            document.getElementById("jss").style.padding ="25px";
+            document.getElementById("jss").style.border="10px solid yellow";
+        
+        }
+    </script>
+</body>
+</html>

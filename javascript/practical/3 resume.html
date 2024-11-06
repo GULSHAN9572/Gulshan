@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple User Input and Print</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple User Input Form</h1>
+        <form id="inputForm">
+            <label for="userInput">Enter Something:</label>
+            <input type="text" id="userInput" placeholder="Type here...">
+            <button type="submit">Print Input</button>
+        </form>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the value from the input field
+            const userInput = document.getElementById('userInput').value;
+
+            // Display the input value
+            document.getElementById('output').textContent = `You entered: ${userInput}`;
+        });
+    </script>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the value from the input field
+    const userInput = document.getElementById('userInput').value;
+
+    // Check if the input is empty
+    if (!userInput.trim()) {
+        alert('Please enter something!');
+        return;
+    }
+
+    // Display the input value
+    document.getElementById('output').textContent = `You entered: ${userInput}`;
+});
+
+    </script>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the value from the input field
+    const userInput = document.getElementById('userInput').value;
+
+    // Open a new window and write the user input into it
+    const printWindow = window.open('', '', 'width=600,height=400');
+    printWindow.document.write('<html><head><title>Print Input</title></head><body>');
+    printWindow.document.write('<h1>Your Input</h1>');
+    printWindow.document.write('<p>' + userInput + '</p>');
+    printWindow.document.write('</body></html>');
+    printWindow.document.close(); // Necessary for IE >= 10
+    printWindow.focus(); // Necessary for IE >= 10
+    printWindow.print(); // Trigger the print dialog
+});
+
+    </script>
+</body>
+</html>

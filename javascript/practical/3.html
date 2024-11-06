@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Quiz</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 20px;
+        }
+        button {
+            background-color: #ff1493;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px #999;
+        }
+        button:active {
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🎉 Funny Quiz Time! 🎉</h1>
+        <p>What do you call a bear with no teeth?</p>
+        <button onclick="showAnswer('grizzly')">A Grizzly!</button>
+        <button onclick="showAnswer('toothless')">Toothless!</button>
+        <button onclick="showAnswer('marmalade')">Marmalade!</button>
+    </div>
+
+    <script>
+        function showAnswer(answer) {
+            if (answer === 'grizzly') {
+                alert("😂 You got it right! It's a *gummy bear*! 😂");
+            } else {
+                alert("😜 Haha, nice try! But the answer is *a gummy bear*! 😜");
+            }
+        }
+    </script>
+</body>
+</html>
